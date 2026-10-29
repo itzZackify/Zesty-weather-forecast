@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Check live weather, hourly conditions, and the 7-day forecast with Zest Weather.">
+  <title>Zest Weather | Forecast Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Zest Weather home">
+      <span class="brand-icon">☀</span>
+      <span>Zest <span class="brand-light">Weather</span></span>
+    </a>
+    <span class="live-badge"><span class="live-dot"></span> LIVE FORECAST</span>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <p class="eyebrow">YOUR PERSONAL WEATHER STATION</p>
+      <h1>Weather, <span>beautifully</span> simple.</h1>
+      <p class="subtitle">Explore the sky today and plan for tomorrow.</p>
+    </section>
+
+    <form class="search-bar" id="searchForm">
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <input
+        id="cityInput"
+        type="search"
+        placeholder="Search a city, e.g. Lagos, London..."
+        aria-label="Search for a city"
+        autocomplete="off"
+        required
+      >
+      <button type="submit" id="searchButton">Search</button>
+    </form>
+
+    <button type="button" class="location-button" id="locationButton">
+      <span aria-hidden="true">◎</span> Use my current location
+    </button>
+
+    <p class="status-message" id="statusMessage" role="status" aria-live="polite">
+      Loading weather...
+    </p>
+
+    <section class="current-weather panel" aria-label="Current weather">
+      <div class="current-main">
+        <div>
+          <p class="eyebrow">CURRENT WEATHER</p>
+          <h2 id="cityName">Loading city...</h2>
+          <p class="muted" id="currentDate">Getting local time...</p>
+          <div class="temperature" id="temperature">--°</div>
+          <p class="condition" id="condition">Checking the sky...</p>
+          <p class="feels-like" id="feelsLike">Feels like --°</p>
+        </div>
+        <div class="weather-art" id="mainIcon" aria-label="Weather icon">🌤️</div>
+      </div>
+        <form id="search-form">
+  <input
+    id="city-input"
+    type="search"
+    placeholder="Search any city..."
+    required
+  >
+  <button type="submit">Search</button>
+</form>
+
+<button id="location-button" type="button">
+  Use My Location
+</button>
+
+<button id="refresh-button" type="button">
+  Refresh Weather
+</button>
+
+<button id="unit-toggle" type="button">
+  Switch to °F
+</button>
+
+<p id="status" role="status"></p>
+
+<h2 id="city-name">Lagos, Nigeria</h2>
+<p id="current-date"></p>
+
+<div>
+  <span id="weather-icon">☀️</span>
+  <span class="moon-icon" aria-label="Moon">🌙</span>
+
+  <strong id="temperature">--°C</strong>
+  <p id="weather-description">Loading...</p>
+</div>
+
+<p>Feels like: <span id="feels-like">--</span></p>
+<p>Humidity: <span id="humidity">--</span></p>
+<p>Wind: <span id="wind-speed">--</span></p>
+<p>Precipitation: <span id="precipitation">--</span></p>
+
+<h2>Hourly Forecast</h2>
+<div id="hourly-forecast"></div>
+
+<h2>7-Day Forecast</h2>
+<div id="daily-forecast"></div>
+
+<script src="script.js" defer></script>
+      <div class="weather-details">
+        <article class="detail-card">
+          <span class="detail-icon">💧</span>
+          <div>
+            <p>Humidity</p>
+            <strong id="humidity">--%</strong>
+          </div>
+        </article>
+        <article class="detail-card">
+          <span class="detail-icon">🌬️</span>
+          <div>
+            <p>Wind speed</p>
+            <strong id="windSpeed">-- km/h</strong>
+          </div>
+        </article>
+        <article class="detail-card">
+          <span class="detail-icon">🌧️</span>
+          <div>
+            <p>Rain chance</p>
+            <strong id="rainChance">--%</strong>
+          </div>
+        </article>
+        <article class="detail-card">
+          <span class="detail-icon">☀️</span>
+          <div>
+            <p>UV index</p>
+            <strong id="uvIndex">--</strong>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="forecast-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PLAN AHEAD</p>
+          <h2>Hourly forecast</h2>
+        </div>
+        <span class="section-note">Next 24 hours</span>
+      </div>
+      <div class="hourly-list panel" id="hourlyForecast">
+        <p class="muted">Loading hourly forecast...</p>
+      </div>
+    </section>
+
+    <section class="forecast-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE WEEK AHEAD</p>
+          <h2>7-day forecast</h2>
+        </div>
+        <span class="section-note">Daily outlook</span>
+      </div>
+      <div class="daily-list panel" id="dailyForecast">
+        <p class="muted">Loading 7-day forecast...</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Made with ☁️ by <strong>Zest Weather</strong></p>
+      <p>Weather data provided by
+        <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>
+      </p>
+      <p class="footer-note">Forecasts are estimates and may change as weather conditions develop.</p>
+    </footer>
+  </main>
+</body>
+</html>
